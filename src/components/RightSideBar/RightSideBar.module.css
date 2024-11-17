@@ -1,0 +1,12 @@
+.rightSidebar {
+  background-color: #f0f1f3;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.summaryDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

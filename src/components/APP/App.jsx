@@ -5,6 +5,7 @@ import { PrivateRoute } from "../../configRoute/PrivateRoute";
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import { RestrictedRoute } from "configRoute/RestrictedRoute";
+import RightSideBar from "components/RightSideBar/RightSideBar";
 
 // const Header = lazy(() => import('../Header/Header'));
 const DiaryPage = lazy(() => import('../../pages/DiaryPage/DiaryPage'));
@@ -26,6 +27,7 @@ export const App = () => {
           <Route path='/login' element={<RestrictedRoute redirectTo="/calculator" component={<LoginPage />} />} />
         </Routes>
       </Suspense>
+      <RightSideBar/>
     </>
   );
 };

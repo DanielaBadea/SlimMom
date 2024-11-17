@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { message as notificationMessage } from "antd";
 
-axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.baseURL = 'https://slim-mom-backend.vercel.app/';
 
 export const fetchPublicRecommendations = createAsyncThunk(
     'recommendations/public',

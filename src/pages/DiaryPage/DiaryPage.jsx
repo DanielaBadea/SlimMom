@@ -5,14 +5,15 @@ import DiaryProductsList from "../../components/DiaryProductsList/DiaryProductsL
 // import { selectConsumedProductsByDate } from '../../redux/diary/selectors';
 import { fetchAllProducts } from "../../redux/diary/operations";
 import { useDispatch, useSelector } from "react-redux";
-import { selectconsumedProductsError, selectDiary, selectIsLoading } from "../../redux/diary/selectors";
+import { selectConsumedProducts, selectconsumedProductsError, selectDiary, selectIsLoading } from "../../redux/diary/selectors";
 import Spinner from "../../components/Spinner/Spinner";
 import DiaryDateСalendar from "../../components/DiaryDateСalendar/DiaryDateСalendar";
 
 
 const DiaryPage = () => {
     
-    const consumedProducts = useSelector(selectDiary);
+    // const consumedProducts = useSelector(selectDiary);
+    const consumedProducts = useSelector(selectConsumedProducts);
     console.log('consumed products:', consumedProducts);
     const isLoading = useSelector(selectIsLoading);
     const error = useSelector(selectconsumedProductsError);

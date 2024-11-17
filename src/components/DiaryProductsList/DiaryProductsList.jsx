@@ -7,9 +7,10 @@ import { fetchRemoveProduct } from "../../redux/diary/operations";
 const DiaryProductsList = ({consumedProducts, selectedDate }) => {
     const dispatch = useDispatch();
 
-    const handleDeleteProduct = (productId) => {
+    const handleDeleteProduct = async (productId) => {
+        console.log("Product Id removed:", productId)
         const dateString = selectedDate.toISOString(); 
-        dispatch(fetchRemoveProduct({ date: dateString, productId }));
+        await dispatch(fetchRemoveProduct({ date: dateString, productId }));
     };
 
     return (
@@ -19,7 +20,7 @@ const DiaryProductsList = ({consumedProducts, selectedDate }) => {
             ) : (
                 consumedProducts.map((product) => (
                     <DiaryProductsListItem key={product._id} product={product}
-                        onDelete={() => handleDeleteProduct(product._id)} />
+                        onDelete={() => handleDeleteProduct(product.productId._id)} />
                 ))
             )}
         </div>

@@ -20,7 +20,6 @@
   background: #264061;
   background-position: bottom;
   background-repeat: no-repeat;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   z-index: 999;
   display: none;
   flex-direction: column;
@@ -31,7 +30,7 @@
 .nav.open {
   display: block;
   position: fixed;
-  top: 100px;
+  top: 80px;
   left: 0;
 }
 
@@ -56,11 +55,21 @@
   background-color: transparent;
   border: none;
 }
-@media (min-width: 769px) {
+
+@media (min-width: 1024px) {
   .menuButton {
     display: none;
   }
   .nav {
-    display: block;
+    display: flex;
+    position: static !important;
+    height: auto;
+    width: auto;
+    background: none;
+  }
+  .list {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
   }
 }

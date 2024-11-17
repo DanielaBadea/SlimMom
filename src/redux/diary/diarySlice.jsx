@@ -36,7 +36,7 @@ const diarySlice = createSlice({
             .addCase(fetchRemoveProduct.rejected, handleRejected)
             .addCase(fetchAllProducts.pending, handlePending)
             .addCase(fetchAllProducts.fulfilled, (state, action) => {
-                state.consumedProducts = action.payload.consumedProducts || []; 
+                state.consumedProducts = action.payload || []; 
                 state.isLoading = false;
                 state.error = null;
             })
